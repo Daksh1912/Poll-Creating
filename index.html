@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Poll Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <h1>Create Your Own Poll</h1>
+        <div class="form-container">
+            <form id="pollForm">
+                <label for="question">Poll Question</label>
+                <input type="text" id="question" placeholder="Enter your question here..." required>
+                
+                <label for="option1">Option 1</label>
+                <input type="text" id="option1" placeholder="Option 1" required>
+                
+                <label for="option2">Option 2</label>
+                <input type="text" id="option2" placeholder="Option 2" required>
+                
+                <button type="button" class="create-btn" onclick="createPoll()">Create Poll</button>
+            </form>
+        </div>
+
+        <div id="pollArea" class="hidden poll-section">
+            <h2>Vote Now!</h2>
+            <p id="pollQuestion" class="poll-question"></p>
+            <div class="poll-options">
+                <input type="radio" name="vote" id="vote1">
+                <label for="vote1" id="opt1Text"></label><br>
+
+                <input type="radio" name="vote" id="vote2">
+                <label for="vote2" id="opt2Text"></label><br>
+            </div>
+            <button class="submit-btn" onclick="submitVote()">Submit Vote</button>
+        </div>
+
+        <div id="resultsArea" class="hidden results-section">
+            <h2>Poll Results</h2>
+            <p><strong>Question:</strong> <span id="resultsQuestion"></span></p>
+            <p><strong>Option 1</strong> (<span id="resultsOpt1Text"></span>): <span id="opt1Votes">0</span> votes</p>
+            <p><strong>Option 2</strong> (<span id="resultsOpt2Text"></span>): <span id="opt2Votes">0</span> votes</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
